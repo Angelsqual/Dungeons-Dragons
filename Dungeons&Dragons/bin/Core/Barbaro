@@ -1,0 +1,23 @@
+package Core;
+
+public class Barbaro extends Personaje {
+
+    public Barbaro(String nombre) {
+        super(nombre);
+        this.salud = 1700;
+    }
+
+    @Override
+    public String toString() {
+        return "[BARBARO: " + this.nombre + ": " + this.salud + "]";
+    }
+
+    @Override
+    public int[] ataca(Personaje enemigo) {
+        int[] resultados = new int[3];
+        resultados[0] = this.ataque.lanzaAtaque(enemigo);
+        resultados[1] = this.ataque.lanzaAtaque(enemigo);
+        resultados[2] = this.ataque.lanzaAtaque(enemigo);
+        return resultados;
+    }
+}
