@@ -1,0 +1,22 @@
+package Core;
+
+public class Arquero extends Personaje {
+
+    public Arquero(String nombre) {
+        super(nombre);
+        this.salud = 1200;
+    }
+
+    @Override
+    public String toString() {
+        return "[ARQUERO: " + this.nombre + ": " + this.salud + "]";
+    }
+
+    @Override
+    public int[] ataca(Personaje enemigo) {
+        int[] resultados = new int[2];
+        resultados[0] = this.ataque.lanzaAtaque(enemigo);
+        resultados[1] = this.ataque.lanzaAtaque(enemigo);
+        return resultados;
+    }
+}
