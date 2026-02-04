@@ -1,0 +1,21 @@
+package Core;
+
+public class Clerigo extends Personaje {
+
+    public Clerigo(String nombre) {
+        super(nombre);
+        this.salud = 1400;
+    }
+
+    @Override
+    public String toString() {
+        return "[CLERIGO: " + this.nombre + ": " + this.salud + "]";
+    }
+
+    @Override
+    public int[] ataca(Personaje enemigo) {
+        int[] resultados = new int[1];
+        resultados[0] = this.ataque.lanzaAtaque(enemigo);
+        return resultados;
+    }
+}
