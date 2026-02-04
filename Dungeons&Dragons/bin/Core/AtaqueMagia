@@ -1,0 +1,22 @@
+package Core;
+
+import java.util.Random;
+
+public class AtaqueMagia implements Ataque {
+
+    @Override
+    public String toString() {
+        return "magia";
+    }
+
+    @Override
+    public int lanzaAtaque(Personaje enemigo) {
+        Random random = new Random();
+        int ataque = 120;
+        int acierta = random.nextInt(100) < 70 ? 1 : 0;
+        double factor = random.nextDouble();
+        int resultado = (int) (ataque * acierta * factor);
+        enemigo.updateSalud(-resultado);
+        return resultado;
+    }
+}
