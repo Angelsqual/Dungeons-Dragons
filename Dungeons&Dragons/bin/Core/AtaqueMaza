@@ -1,0 +1,22 @@
+package Core;
+
+import java.util.Random;
+
+public class AtaqueMaza implements Ataque {
+
+    @Override
+    public String toString() {
+        return "maza";
+    }
+
+    @Override
+    public int lanzaAtaque(Personaje enemigo) {
+        Random random = new Random();
+        int ataque = 70;
+        int acierta = random.nextInt(100) < 75 ? 1 : 0;
+        double factor = random.nextDouble();
+        int resultado = (int) (ataque * acierta * factor);
+        enemigo.updateSalud(-resultado);
+        return resultado;
+    }
+}
