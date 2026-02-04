@@ -1,0 +1,22 @@
+package Core;
+
+public class Paladin extends Personaje {
+
+    public Paladin(String nombre) {
+        super(nombre);
+        this.salud = 1800;
+    }
+
+    @Override
+    public String toString() {
+        return "[PALADIN: " + this.nombre + ": " + this.salud + "]";
+    }
+
+    @Override
+    public int[] ataca(Personaje enemigo) {
+        int[] resultados = new int[2];
+        resultados[0] = this.ataque.lanzaAtaque(enemigo);
+        resultados[1] = this.ataque.lanzaAtaque(enemigo);
+        return resultados;
+    }
+}
