@@ -1,0 +1,22 @@
+package Core;
+
+public class Mago extends Personaje {
+
+    public Mago(String nombre) {
+        super(nombre);
+        this.salud = 1100;
+    }
+
+    @Override
+    public String toString() {
+        return "[MAGO: " + this.nombre + ": " + this.salud + "]";
+    }
+
+    @Override
+    public int[] ataca(Personaje enemigo) {
+        int[] resultados = new int[2];
+        resultados[0] = this.ataque.lanzaAtaque(enemigo);
+        resultados[1] = this.ataque.lanzaAtaque(enemigo);
+        return resultados;
+    }
+}
